@@ -33,7 +33,7 @@ describe('unit test', () => {
   test('validate default recognize output structure from Watson', async () => {
     expect.assertions(7);
     const response: Object = await speechToText.recognize(
-      '.\\src\\__tests__\\resources\\audio-file.flac',
+      './src/__tests__/resources/audio-file.flac',
       'audio/flac',
     );
     expect(response).toBeType('object');
@@ -50,7 +50,7 @@ describe('integration test', () => {
   test('validate transcript from speech to text service', async () => {
     expect.assertions(1);
     const response: Object = await speechToText.recognize(
-      'src\\__tests__\\resources\\audio-file.flac',
+      './src/__tests__/resources/audio-file.flac',
       'audio/flac',
     );
     expect(response.results[0].alternatives[0].transcript).toBe(
