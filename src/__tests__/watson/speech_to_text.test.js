@@ -22,7 +22,7 @@ describe('smoke test', () => {
     expect.assertions(1);
     await expect(
       speechToText.recognize(
-        'src\\__tests__\\resources\\audio-file.flac',
+        '.\\src\\__tests__\\resources\\audio-file.flac',
         'audio/flac',
       ),
     ).resolves.toBeDefined();
@@ -33,7 +33,7 @@ describe('unit test', () => {
   test('validate default recognize output structure from Watson', async () => {
     expect.assertions(7);
     const response: Object = await speechToText.recognize(
-      'src\\__tests__\\resources\\audio-file.flac',
+      '.\\src\\__tests__\\resources\\audio-file.flac',
       'audio/flac',
     );
     expect(response).toBeType('object');
