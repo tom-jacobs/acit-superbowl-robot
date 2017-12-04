@@ -22,7 +22,7 @@ describe('smoke test', () => {
     expect.assertions(1);
     await expect(
       speechToText.recognize(
-        '.\\src\\__tests__\\resources\\audio-file.flac',
+        './src/__tests__/resources/audio-file.flac',
         'audio/flac',
       ),
     ).resolves.toBeDefined();
