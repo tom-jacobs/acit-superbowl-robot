@@ -7,6 +7,7 @@ module.exports = {
 
   // Watson values
   watson: {
+    opt_out_logging: process.env.WATSON_OPT_OUT_LOGGING || false,
     conversation: {
       username:
         process.env.WATSON_CONVERSATION_USERNAME ||

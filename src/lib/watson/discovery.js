@@ -7,6 +7,9 @@ const discoverySDK = new DiscoveryV1({
   username: config.watson.discovery.username,
   password: config.watson.discovery.password,
   version_date: config.watson.discovery.version_date,
+  headers: {
+    'X-Watson-Learning-Opt-Out': config.watson.opt_out_logging,
+  },
 });
 
 class Discovery {

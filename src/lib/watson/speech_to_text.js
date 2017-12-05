@@ -7,6 +7,9 @@ import config from '../../config';
 const speechToTextSDK = new SpeechToTextV1({
   username: config.watson.speech_to_text.username,
   password: config.watson.speech_to_text.password,
+  headers: {
+    'X-Watson-Learning-Opt-Out': config.watson.opt_out_logging,
+  },
 });
 
 class SpeechToText {
