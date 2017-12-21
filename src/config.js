@@ -15,7 +15,7 @@ module.exports = {
       password: process.env.WATSON_CONVERSATION_PASSWORD || 'mLHVFJBMUszq',
       workspace:
         process.env.WATSON_CONVERSATION_WORKSPACE ||
-        'ec98a505-4776-45e9-bd24-cc252b368df6',
+        '44a32e62-3716-4228-9e98-7668c43fe16d',
     },
     discovery: {
       username:

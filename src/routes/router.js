@@ -9,10 +9,8 @@ const conversation = new Conversation();
 
 // Middleware for default route
 const message = async (req, res) => {
-  const text = req.text;
-  const context = req.context;
   try {
-    const response: Object = await conversation.message(text, context);
+    const response: Object = await conversation.message(req.text, req.context);
     const { output: { text } } = response;
     const { context } = response;
     res.text = text;
@@ -25,6 +23,6 @@ const message = async (req, res) => {
 };
 
 // Register your routes and middleware to handle them here!!
-router.get('/api/message', message);
+router.post('/api/message', message);
 
 export default router;

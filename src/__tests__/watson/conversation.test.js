@@ -12,7 +12,7 @@ const conversation = new Conversation();
 // Test helper functions
 //
 
-function getAllNestedKeysTypesAndLength(obj, keys) {
+/* function getAllNestedKeysTypesAndLength(obj, keys) {
   Object.keys(obj).forEach(key => {
     const value = obj[key];
     if (Object.prototype.toString.call(obj) === '[object Array]') {
@@ -45,7 +45,7 @@ function getAllNestedKeysTypesAndLength(obj, keys) {
     }
   });
   return keys;
-}
+} */
 
 //
 // Begin Tests
@@ -59,7 +59,7 @@ describe('smoke test', () => {
   });
 });
 
-describe('integration test', () => {
+/* describe('integration test', () => {
   test('confirm Watson JSON properties matches saved JSONs properties', async () => {
     expect.assertions(1);
     const expectedJSON =
@@ -74,7 +74,7 @@ describe('integration test', () => {
     ).sort();
     expect(actualKeys).toEqual(expectedKeys);
   });
-});
+}); */
 
 describe('unit test', () => {
   test('validate output structure from Watson', async () => {
