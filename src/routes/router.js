@@ -8,20 +8,23 @@ const router = new Router();
 const conversation = new Conversation();
 
 // Middleware for default route
-const beginConversation = async (req, res) => {
-  let stringifiedOutput: string = '';
+const message = async (req, res) => {
+  const text = req.text;
+  const context = req.context;
   try {
-    const response: Object = await conversation.message('Hello');
+    const response: Object = await conversation.message(text, context);
     const { output: { text } } = response;
-    stringifiedOutput = text.join('. ');
+    const { context } = response;
+    res.text = text;
+    res.context = context;
   } catch (error) {
     logger.error(error);
-    stringifiedOutput = `There was an error retrieving a response from the conversation service!`;
+    res.text = `I was unable to understand what you said. I think it was my fault. My wiring might be a bit off!`;
   }
-  res.send(stringifiedOutput);
+  res.end();
 };
 
 // Register your routes and middleware to handle them here!!
-router.get('/', beginConversation);
+router.get('/api/message', message);
 
 export default router;
